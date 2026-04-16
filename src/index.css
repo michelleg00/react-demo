@@ -52,6 +52,7 @@
 
 body {
   margin: 0;
+  line-height: 1.6;
 }
 
 #root {
@@ -95,17 +96,40 @@ p {
   margin: 0;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+
+
+
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px;
+  min-height: 100vh;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.hero-text {
+  max-width: 700px;
+}
+
+.hero-text h2 {
+  margin-bottom: 6px;
+}
+
+.hero-text h3 {
+  font-size: 26px;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+}
+
+.hero-image img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
 }
