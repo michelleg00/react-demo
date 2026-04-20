@@ -45,7 +45,7 @@ export default function FluidBlob() {
       const x = Math.cos(lat) * Math.cos(lon);
       const y = Math.sin(lat);
       const z = Math.cos(lat) * Math.sin(lon);
-      return 150 * (1 + noise(x, y, z, t) * 0.28);
+      return 160 * (1 + noise(x, y, z, t) * 0.28);
     };
 
     const rotatePoint = ([x, y, z]) => {
