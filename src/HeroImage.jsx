@@ -1,11 +1,11 @@
-import profile from "./assets/profilepicture.png";
+import profilePic from "./assets/profilepicture.png";
 
 
 function HeroImage() {
   return (
 
-      <img src={profile} 
-      className="w-24 h-24 rounded-full object-cover" />
+      <img src={profilePic} 
+      className="w-150 h-150 object-cover" />
   );
 }
 
