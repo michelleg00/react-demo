@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Hero from "./Hero"
+import Hero from "./components/Hero"
 import GridSphere from "./components/GridSphere"
 import MetaBalls from "./components/MetaBalls"
 import AboutMe from './pages/AboutMe';
-import LinkList from './LinkList';
+import LinkList from './components/LinkList';
 
 function Home() {
   return (
@@ -26,7 +26,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/AboutMe" element={<AboutMe />} />
+      <Route path="/aboutme" element={<AboutMe />} />
     </Routes>
   );
 }
