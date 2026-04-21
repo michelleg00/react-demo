@@ -72,7 +72,7 @@ export default function FluidBlob() {
       // smooth breathing motion
       const breathe = 1 + Math.sin(t * 1.5) * 0.08;
 
-      return 160 * breathe * (1 + noise(x, y, z, t) * 0.28);
+      return 150 * breathe * (1 + noise(x, y, z, t) * 0.28);
     };
 
     const rotatePoint = ([x, y, z]) => {
