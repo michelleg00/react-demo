@@ -1,4 +1,4 @@
-import profilePic from "./assets/profilepicture.png";
+import profilePic from "../assets/profilepicture.png";
 
 
 function HeroImage() {

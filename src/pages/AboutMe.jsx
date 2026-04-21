@@ -1,4 +1,4 @@
-import HeroImage from "./components/HeroImage"
+import HeroImage from "../components/HeroImage"
 
 function AboutMe() {
     return (

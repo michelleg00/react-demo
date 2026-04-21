@@ -140,7 +140,7 @@ export default function FluidBlob() {
         allLines.push(pts);
       }
 
-      ctx.strokeStyle = "rgba(140,120,255,0.5)";
+      ctx.strokeStyle = "rgba(255,255,255,0.8)";
       ctx.lineWidth = 0.75;
 
       allLines.forEach((pts) => {

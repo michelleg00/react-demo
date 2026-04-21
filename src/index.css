@@ -16,6 +16,7 @@
 @layer base {
   body {
     @apply mx-16 my-16 bg-black;
+    color: var(--color-text);
   }
 }
 
