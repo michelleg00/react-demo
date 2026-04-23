@@ -3,14 +3,17 @@ import skills from "../skills.json" with {
 
 function SkillsList() {
     return (
-        <ul><p className="text-lg">Skills</p><br />
-        {skills.skills.map((skill) => (
-            <li key={skill.id}>
-                {skill.name}
-            </li>
-        ))}
+        <>
+         <p className="mb-8 mt-8 text-center">Skills</p>
+            <ul className="flex gap-4 flex-wrap">
+                {skills.skills.map((skill) => (
+                    <li key={skill.id} className="border rounded-xl border-neutral-400 p-2 w-28 text-center text-xs">
+                        {skill.name}
+                    </li>
+                ))}
 
-        </ul >
+            </ul >
+        </>
     );
 }
 

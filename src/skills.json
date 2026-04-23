@@ -1,9 +1,9 @@
 {
   "skills": [
-    { "id": 1, "name": "3Dsmax" },
-    { "id": 2, "name": "Adobe Photoshop" },
-    { "id": 3, "name": "Adobe Illustrator" },
-    { "id": 4, "name": "Adobe Indesign" },
+    { "id": 1, "name": "Adobe Photoshop" },
+    { "id": 2, "name": "Adobe Illustrator" },
+    { "id": 3, "name": "Adobe Indesign\u00A0" },
+    { "id": 4, "name": "3Dsmax" },
     { "id": 5, "name": "Figma" }
   ]
   
