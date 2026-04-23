@@ -6,6 +6,7 @@ import MetaBalls from "./components/MetaBalls"
 import AboutMe from './pages/AboutMe';
 import LinkList from './components/LinkList';
 
+
 function Home() {
   return (
     <>

@@ -1,0 +1,10 @@
+{
+  "skills": [
+    { "id": 1, "name": "3Dsmax" },
+    { "id": 2, "name": "Adobe Photoshop" },
+    { "id": 3, "name": "Adobe Illustratgor" },
+    { "id": 4, "name": "Adobe Indesign" },
+    { "id": 5, "name": "Figma" }
+  ]
+  
+}

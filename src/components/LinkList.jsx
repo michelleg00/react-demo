@@ -4,11 +4,18 @@ export default function LinkList() {
     return (
         <ul className="flex justify-end gap-8 pb-10">
             <li>
-                <Link to="/"> Home </Link>
-
+                <Link to="/"> </Link>
             </li>
             <li>
                 <Link to="/aboutme"> About </Link>
+            </li>
+
+            <li>
+                <Link to="/work"> Work </Link>
+
+            </li>
+             <li>
+                <Link to="/contact"> Contact </Link>
 
             </li>
         </ul>
