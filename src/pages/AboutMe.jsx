@@ -1,8 +1,10 @@
-import HeroImage from "../components/HeroImage"
-import HobbiesList from "./Skills";
+import HeroImage from "../components/HeroImage";
+import HobbiesList from "../components/Skills";
+
 
 function AboutMe() {
     return (
+
         <div className="flex justify-center items-center gap-8">
             <div>
                 <HeroImage />
@@ -14,9 +16,7 @@ function AboutMe() {
                 <p>Generally passionate about all forms of art with an additional interest in graphic design,
                     I focus on delivering impactful user interface designs that balance user needs with business goals.
                 </p>
-                <p>
-                    <HobbiesList />
-                </p>
+                <HobbiesList />
             </div>
         </div>
     );
