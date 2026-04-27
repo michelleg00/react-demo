@@ -16,8 +16,8 @@ export default function Header() {
                         to={link.target}
                         className={({ isActive }) => `
                             ${isActive 
-                                ? "text-white cursor-default font-semibold" 
-                                : "underline decoration-1"} 
+                                ? "text-white cursor-default underline decoration-2 underline-offset-8" 
+                                : ""} 
                             ${index === 0 && 
                                 "mr-auto"}
                         `}

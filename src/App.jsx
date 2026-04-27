@@ -13,7 +13,6 @@ import Layout from "./Layout";
 function Home() {
   return (
     <>
-    <Layout>
       {/* <LinkList /> */}
       <div className="min-h-screen bg-black">
         <Hero />
@@ -21,8 +20,6 @@ function Home() {
           <GridSphere />
         </div>
       </div>
-      </Layout>
-
     </>
   );
 }
