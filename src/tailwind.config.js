@@ -4,6 +4,7 @@ export default {
       extend: {
         fontFamily: {
           cormorant: ["Cormorant", "sans-serif"],
+          canobis: ["Canobis", "sans-serif"]
       },
     },
   },

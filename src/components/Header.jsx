@@ -6,19 +6,20 @@ export default function Header() {
         { target: "/about", displayName: "About" },
         { target: "/work", displayName: "Work" },
         { target: "/contact", displayName: "Contact" }
-        
+
     ]
-     return (
+    return (
         <header>
             <nav className="flex gap-4 p-4">
                 {links.map((link, index) => (
                     <NavLink
                         to={link.target}
                         className={({ isActive }) => `
-                            ${isActive 
-                                ? "text-white cursor-default underline decoration-2 underline-offset-8" 
+                        ${index === 0 ? "font-canobis" : ""}
+                        ${isActive
+                                ? "text-white cursor-default underline decoration-2 underline-offset-8"
                                 : ""} 
-                            ${index === 0 && 
+                        ${index === 0 &&
                                 "mr-auto"}
                         `}
                     >

@@ -2,10 +2,11 @@ import { Routes, Route } from 'react-router-dom';
 
 import Hero from "./components/Hero"
 import GridSphere from "./components/GridSphere";
-import MetaBalls from "./components/MetaBalls";
 import AboutMe from "./pages/AboutMe";
-import LinkList from "./components/LinkList";
+import Work from "./pages/Work";
+import Contact from "./pages/Contact";
 import Layout from "./Layout";
+
 
 
 
@@ -13,7 +14,6 @@ import Layout from "./Layout";
 function Home() {
   return (
     <>
-      {/* <LinkList /> */}
       <div className="min-h-screen bg-black">
         <Hero />
         <div className="flex justify-center items-center">
@@ -31,6 +31,8 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<AboutMe />} />
+        <Route path="work" element={<Work />} />
+        <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>
   );
