@@ -6,7 +6,7 @@ function Form() {
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col justify-center w-full max-w-md gap-6">
-            <h1>Contact me</h1>
+            <h3>Contact me</h3>
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="E-Mail" />
             <textarea placeholder="Message" className = "h-40"/>

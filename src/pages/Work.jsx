@@ -1,11 +1,8 @@
 
 
-
-
 function Work() {
   return (
     <>
-      
     </>
   );
 }
