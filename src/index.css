@@ -17,8 +17,18 @@
 
 }
 
-li, p, nav {
+li,
+p,
+nav {
   font-family: var(--font-poppins);
+}
+
+nav {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 28px;
 }
 
 
@@ -28,8 +38,14 @@ li, p, nav {
   body {
     @apply mx-16 my-16 bg-black;
     color: var(--color-text);
+
+    input,
+    textarea {
+      @apply border border-white/20 bg-white/10 backdrop-blur-sm rounded px-3 py-2 text-white;
+    }
   }
 }
+
 
 
 /* 

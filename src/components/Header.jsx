@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
     const links = [
-        { target: "/", displayName: "Home" },
+        { target: "/", displayName: "mg" },
         { target: "/about", displayName: "About" },
         { target: "/work", displayName: "Work" },
         { target: "/contact", displayName: "Contact" }
@@ -12,7 +12,7 @@ export default function Header() {
         <header>
             <nav className="flex gap-4 p-4">
                 {links.map((link, index) => (
-                    <NavLink
+                    <NavLink 
                         to={link.target}
                         className={({ isActive }) => `
                         ${index === 0 ? "font-canobis" : ""}

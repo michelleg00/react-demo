@@ -7,12 +7,9 @@ export default function MetaballBlob() {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
-    const size = 800;
-    canvas.width = size;
-    canvas.height = size;
-
-    const cx = size / 2;
-    const cy = size / 2;
+    let size = Math.max(window.innerWidth, window.innerHeight);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
     let t = 0;
     let animId;
@@ -28,9 +25,8 @@ export default function MetaballBlob() {
         b.x += Math.cos(t * 0.8 + b.r) * 1.2 + b.vx;
         b.y += Math.sin(t * 0.9 + b.r) * 1.2 + b.vy;
 
-        // bounce
-        if (b.x < 100 || b.x > size - 100) b.vx *= -1;
-        if (b.y < 100 || b.y > size - 100) b.vy *= -1;
+        if (b.x < 100 || b.x > canvas.width - 100) b.vx *= -1;
+        if (b.y < 100 || b.y > canvas.height - 100) b.vy *= -1;
       });
     }
 
@@ -49,27 +45,26 @@ export default function MetaballBlob() {
     }
 
     function drawMetaballs() {
-      const image = ctx.createImageData(size, size);
+      const image = ctx.createImageData(canvas.width, canvas.height);
       const data = image.data;
 
       const threshold = 1.2;
 
-      for (let x = 0; x < size; x += 2) {
-        for (let y = 0; y < size; y += 2) {
+      for (let x = 0; x < canvas.width; x += 2) {
+        for (let y = 0; y < canvas.height; y += 2) {
           const v = field(x, y);
 
           if (v > threshold) {
-            const i = (x + y * size) * 4;
+            const i = (x + y * canvas.width) * 4;
 
             const intensity = Math.min(255, (v - threshold) * 180);
 
-            data[i] = 120 + intensity;     // R
-            data[i + 1] = 100 + intensity; // G
-            data[i + 2] = 255;             // B
-            data[i + 3] = 255;             // A
+            data[i] = 120 + intensity;
+            data[i + 1] = 100 + intensity;
+            data[i + 2] = 255;
+            data[i + 3] = 255;
 
-            // fill 2x2 block for speed
-            const i2 = ((x + 1) + y * size) * 4;
+            const i2 = ((x + 1) + y * canvas.width) * 4;
             data[i2] = data[i];
             data[i2 + 1] = data[i + 1];
             data[i2 + 2] = data[i + 2];
@@ -92,7 +87,7 @@ export default function MetaballBlob() {
     function animate() {
       t += 0.015;
 
-      ctx.clearRect(0, 0, size, size);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       updateBlobs();
       drawMetaballs();
@@ -103,8 +98,23 @@ export default function MetaballBlob() {
 
     animate();
 
-    return () => cancelAnimationFrame(animId);
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      cancelAnimationFrame(animId);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
-  return <canvas ref={canvasRef} />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 w-full h-full -z-10 pointer-events-none"
+    />
+  );
 }
