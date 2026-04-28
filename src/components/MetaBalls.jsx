@@ -15,9 +15,9 @@ export default function MetaballBlob() {
     let animId;
 
     const blobs = [
-      { x: 200, y: 250, vx: 1.2, vy: 0.9, r: 90 },
-      { x: 320, y: 260, vx: -1.0, vy: 1.1, r: 100 },
-      { x: 260, y: 170, vx: 0.8, vy: -1.3, r: 85 },
+      { x: 200, y: 250, vx: 1.0, vy: 0.9, r: 120 },
+      { x: 320, y: 260, vx: -1.0, vy: 1.1, r: 140 },
+      { x: 260, y: 170, vx: 0.8, vy: -1.3, r: 90 },
     ];
 
     function updateBlobs() {
@@ -57,11 +57,14 @@ export default function MetaballBlob() {
           if (v > threshold) {
             const i = (x + y * canvas.width) * 4;
 
-            const intensity = Math.min(255, (v - threshold) * 180);
+            const base = 60;
+            const intensity = Math.min(120, (v - threshold) * 100);
 
-            data[i] = 120 + intensity;
-            data[i + 1] = 100 + intensity;
-            data[i + 2] = 255;
+            const grey = base + intensity;
+
+            data[i] = grey;      
+            data[i + 1] = grey;  
+            data[i + 2] = grey;  
             data[i + 3] = 255;
 
             const i2 = ((x + 1) + y * canvas.width) * 4;
@@ -85,7 +88,7 @@ export default function MetaballBlob() {
     }
 
     function animate() {
-      t += 0.015;
+      t += 0.008;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
